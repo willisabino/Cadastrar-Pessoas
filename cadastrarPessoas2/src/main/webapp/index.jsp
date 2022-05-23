@@ -36,8 +36,8 @@
 		<p>
 			<label for="sexo">Sexo</label> <select name="sexo" id="sexo">
 				<option>Selecione um Sexo:</option>
-				<option value="m">Masculino</option>
-				<option value="f">Feminino</option>
+				<option value="1">Masculino</option>
+				<option value="2">Feminino</option>
 			</select>
 		</p>
 		<p>

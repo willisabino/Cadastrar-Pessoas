@@ -19,11 +19,6 @@ public class PessoaService {
 			long id = p.getId();
 			String nome = p.getNome();
 			int idade = p.getIdade();
-			if (p.getSexo().equals("m")) {
-				p.setSexo("Masculino");
-			} else if (p.getSexo().equals("f")) {
-				p.setSexo("Feminino");
-			}
 			String sexo = p.getSexo();
 			Date data = new Date();
 			
