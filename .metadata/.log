@@ -916,3 +916,28 @@ Caused by: java.io.FileNotFoundException: C:\Users\Willi Sabino\Documents\Cadast
 	at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:264)
 	... 12 more
 >>>>>>> Implementando-Join
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-23 13:12:57.262
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-23 13:13:05.583
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-23 13:13:09.405
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-23 13:13:13.913
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+!ENTRY org.eclipse.jdt.core 4 4 2022-05-23 13:13:20.504
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
