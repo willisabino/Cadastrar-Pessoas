@@ -2,3 +2,4 @@
 .metadata/.log
 .metadata/.log
 *.snap
+.metadata/.plugins/org.eclipse.wst.server.core/tmp0/logs/localhost_access_log.2022-05-23.txt
