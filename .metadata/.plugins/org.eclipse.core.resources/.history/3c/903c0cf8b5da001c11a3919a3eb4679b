@@ -197,7 +197,7 @@ public class PessoaDao {
 		
 		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.tb_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
-		Pessoa pessoa = null;
+		Pessoa pessoa = new Pessoa();
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -213,10 +213,11 @@ public class PessoaDao {
 			
 			rset = pstm.executeQuery(); 
 			
+			//pstm.execute();
 			System.out.println("Fora do laço");
 			while(rset.next()) {
 				
-				pessoa = new Pessoa();
+				
 				
 				pessoa.setId(rset.getLong("id"));
 				pessoa.setNome(rset.getString("nome"));

@@ -19,6 +19,11 @@ public class PessoaService {
 			long id = p.getId();
 			String nome = p.getNome();
 			int idade = p.getIdade();
+			if (p.getSexo().equals("m")) {
+				p.setSexo("Masculino");
+			} else if (p.getSexo().equals("f")) {
+				p.setSexo("Feminino");
+			}
 			String sexo = p.getSexo();
 			Date data = new Date();
 			
@@ -65,14 +70,24 @@ public class PessoaService {
 		
 	}
 
-	public Pessoa buscaPessoaPeloId(String paramId) {
+	public ArrayList<Pessoa> buscaPessoaPeloId(String paramId) {
 		
-		Long id = Long.parseLong(paramId);
+		int id = Integer.parseInt(paramId);
 		
-		Pessoa listaPessoa = new Pessoa();
+		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		PessoaService pessoaService = new PessoaService();
 		PessoaDao pessoaDao = new PessoaDao();
+		//listaPessoa = pessoaService.chamaListaPessoaService();
 		listaPessoa = pessoaDao.buscaPeloId(id);
 
+//		for (int x = 0; x < listaPessoa.size(); x++) {
+//
+//			if (listaPessoa.get(x).getId() == id) {
+//				
+//				return listaPessoa.get(x);
+//			}
+//			
+//		}
 		return listaPessoa;
 	}
 }

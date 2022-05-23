@@ -19,6 +19,11 @@ public class PessoaService {
 			long id = p.getId();
 			String nome = p.getNome();
 			int idade = p.getIdade();
+			if (p.getSexo().equals("m")) {
+				p.setSexo("Masculino");
+			} else if (p.getSexo().equals("f")) {
+				p.setSexo("Feminino");
+			}
 			String sexo = p.getSexo();
 			Date data = new Date();
 			
@@ -39,6 +44,25 @@ public class PessoaService {
 		pessoa.setDataCadastro(new Date());
 		
 		pessoaDao.inserirCadastro(pessoa);
+	}
+	
+	public Pessoa buscaPessoaPeloId(String paramId) {
+		
+		int id = Integer.parseInt(paramId);
+		
+		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		PessoaService pessoaService = new PessoaService();
+		listaPessoa = pessoaService.chamaListaPessoaService();
+
+		for (int x = 0; x < listaPessoa.size(); x++) {
+
+			if (listaPessoa.get(x).getId() == id) {
+				
+				return listaPessoa.get(x);
+			}
+			
+		}
+		return null;
 	}
 
 	public void alterarCadastro(String id, String nome, String idade, String sexo) {
@@ -65,14 +89,4 @@ public class PessoaService {
 		
 	}
 
-	public Pessoa buscaPessoaPeloId(String paramId) {
-		
-		Long id = Long.parseLong(paramId);
-		
-		Pessoa listaPessoa = new Pessoa();
-		PessoaDao pessoaDao = new PessoaDao();
-		listaPessoa = pessoaDao.buscaPeloId(id);
-
-		return listaPessoa;
-	}
 }

@@ -213,6 +213,7 @@ public class PessoaDao {
 			
 			rset = pstm.executeQuery(); 
 			
+			//pstm.execute();
 			System.out.println("Fora do laço");
 			while(rset.next()) {
 				
