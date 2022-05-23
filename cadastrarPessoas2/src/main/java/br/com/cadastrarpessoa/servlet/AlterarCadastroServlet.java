@@ -23,12 +23,13 @@ public class AlterarCadastroServlet extends HttpServlet {
 		
 		String id =  request.getParameter("id");
 		
-		Pessoa cadastro = new Pessoa();
+		ArrayList<Pessoa> cadastro = new ArrayList<>();
 		PessoaService pessoaService = new PessoaService();
 		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
 		
 		
 		cadastro = pessoaService.buscaPessoaPeloId(id);
+		System.out.println("Servlet " + cadastro);
 		
 		listaPessoa = pessoaService.chamaListaPessoaService();
 		

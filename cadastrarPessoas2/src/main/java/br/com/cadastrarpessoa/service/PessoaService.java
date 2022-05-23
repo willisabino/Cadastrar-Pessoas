@@ -45,25 +45,6 @@ public class PessoaService {
 		
 		pessoaDao.inserirCadastro(pessoa);
 	}
-	
-	public Pessoa buscaPessoaPeloId(String paramId) {
-		
-		int id = Integer.parseInt(paramId);
-		
-		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
-		PessoaService pessoaService = new PessoaService();
-		listaPessoa = pessoaService.chamaListaPessoaService();
-
-		for (int x = 0; x < listaPessoa.size(); x++) {
-
-			if (listaPessoa.get(x).getId() == id) {
-				
-				return listaPessoa.get(x);
-			}
-			
-		}
-		return null;
-	}
 
 	public void alterarCadastro(String id, String nome, String idade, String sexo) {
 		
@@ -89,4 +70,26 @@ public class PessoaService {
 		
 	}
 
+	public ArrayList<Pessoa> buscaPessoaPeloId(String paramId) {
+		
+		Long id = Long.parseLong(paramId);
+		
+		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		PessoaService pessoaService = new PessoaService();
+		PessoaDao pessoaDao = new PessoaDao();
+		//listaPessoa = pessoaService.chamaListaPessoaService();
+		listaPessoa = pessoaDao.buscaPeloId(id);
+		System.out.println(listaPessoa);
+		System.out.println("PessoaService");
+
+//		for (int x = 0; x < listaPessoa.size(); x++) {
+//
+//			if (listaPessoa.get(x).getId() == id) {
+//				
+//				return listaPessoa.get(x);
+//			}
+//			
+//		}
+		return listaPessoa;
+	}
 }
