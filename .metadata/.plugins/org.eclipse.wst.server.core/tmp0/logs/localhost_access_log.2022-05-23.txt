@@ -118,3 +118,16 @@
 0:0:0:0:0:0:0:1 - - [23/May/2022:13:21:17 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=95 HTTP/1.1" 500 3700
 0:0:0:0:0:0:0:1 - - [23/May/2022:13:22:02 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5419
 0:0:0:0:0:0:0:1 - - [23/May/2022:13:22:04 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=95 HTTP/1.1" 200 5428
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:23:40 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=95 HTTP/1.1" 500 3700
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:24:26 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=95 HTTP/1.1" 500 3700
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:33:17 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5419
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:33:20 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=95 HTTP/1.1" 200 5428
+127.0.0.1 - - [23/May/2022:13:35:00 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:01 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5419
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:15 -0300] "POST /cadastrarPessoas2/pessoaservlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:15 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5777
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:18 -0300] "GET /cadastrarPessoas2/alterarCadastro?id=110 HTTP/1.1" 200 5788
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:25 -0300] "POST /cadastrarPessoas2/pessoaservlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:25 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5777
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:30 -0300] "GET /cadastrarPessoas2/removePessoaServlet?id=110 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/May/2022:13:35:30 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 5419
