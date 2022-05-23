@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;br.com.cadastrarpessoa.servlet.AlterarCadastro&apos; to &apos;AlterarCadastroServlet&apos;&#x0D;&#x0A;- Original project: &apos;cadastrarPessoas2&apos;&#x0D;&#x0A;- Original element: &apos;br.com.cadastrarpessoa.servlet.AlterarCadastro&apos;&#x0D;&#x0A;- Renamed element: &apos;br.com.cadastrarpessoa.servlet.AlterarCadastroServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AlterarCadastro&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;br.com.cadastrarpessoa.servlet{AlterarCadastro.java[AlterarCadastro" matchStrategy="1" name="AlterarCadastroServlet" qualified="false" references="true" similarDeclarations="false" stamp="1653274058623" textual="false" version="1.0"/>
+</session>

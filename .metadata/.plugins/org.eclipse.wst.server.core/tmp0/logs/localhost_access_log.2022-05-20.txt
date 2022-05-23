@@ -1,0 +1,15 @@
+127.0.0.1 - - [20/May/2022:12:16:19 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/May/2022:12:16:21 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 1169
+127.0.0.1 - - [20/May/2022:12:23:54 -0300] "GET / HTTP/1.1" 404 763
+127.0.0.1 - - [20/May/2022:12:23:56 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 1208
+127.0.0.1 - - [20/May/2022:12:23:56 -0300] "GET /cadastrarPessoas2/estilo.css HTTP/1.1" 200 301
+127.0.0.1 - - [20/May/2022:12:23:56 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 1208
+127.0.0.1 - - [20/May/2022:14:01:12 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/May/2022:14:01:14 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 500 3696
+127.0.0.1 - - [20/May/2022:14:05:05 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/May/2022:14:05:06 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 500 2789
+127.0.0.1 - - [20/May/2022:14:07:32 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/May/2022:14:07:34 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 1336
+0:0:0:0:0:0:0:1 - - [20/May/2022:14:07:34 -0300] "GET /cadastrarPessoas2/estilo.css HTTP/1.1" 304 -
+127.0.0.1 - - [20/May/2022:14:10:29 -0300] "GET / HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [20/May/2022:14:10:31 -0300] "GET /cadastrarPessoas2/pessoaservlet HTTP/1.1" 200 1336

@@ -1,0 +1,69 @@
+package br.com.cadastrarpessoa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.cadastrarpessoa.dao.PessoaDao;
+import br.com.cadastrarpessoa.model.Pessoa;
+import br.com.cadastrarpessoa.service.PessoaService;
+
+/**
+ * Servlet implementation class PessoaServlet
+ */
+@WebServlet("/pessoaservlet")
+public class PessoaServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PessoaServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+   
+    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
+    	doGet(request, response);
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");
+		String acao = request.getParameter("acao");
+		
+		PessoaDao pessoaDao = new PessoaDao();
+		PessoaService pessoaService = new PessoaService();
+		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		
+		 	
+			
+			listaPessoa = pessoaService.chamaListaPessoaService();
+			PrintWriter out = response.getWriter();
+			
+			for(int x = 0; x < listaPessoa.size(); x++) {
+				
+				out.println(listaPessoa.get(x).getNome());
+				System.out.println(listaPessoa.get(x).getNome());
+				
+			}
+		
+			
+		listaPessoa = pessoaService.chamaListaPessoaService();
+		
+		request.setAttribute("sessaoListaPessoa", listaPessoa);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		rd.forward(request, response);
+	}
+
+}

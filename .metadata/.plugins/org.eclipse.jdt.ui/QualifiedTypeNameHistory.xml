@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="br.com.cadastrarpessoa.factory.ConnectionFactory"/>
+    <fullyQualifiedTypeName name="br.com.cadastrarpessoa.dao.PessoaDao"/>
+    <fullyQualifiedTypeName name="br.com.cadastrarpessoa.service.PessoaService"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.cadastrarpessoa.model.Pessoa"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

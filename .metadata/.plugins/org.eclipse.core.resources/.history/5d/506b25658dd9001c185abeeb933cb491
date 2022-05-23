@@ -1,0 +1,42 @@
+package br.com.cadastrarpessoa.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.cadastrarpessoa.dao.PessoaDao;
+import br.com.cadastrarpessoa.model.Pessoa;
+import br.com.cadastrarpessoa.service.PessoaService;
+
+/**
+ * Servlet implementation class PessoaServlet
+ */
+@WebServlet("/pessoaservlet")
+public class PessoaServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");
+		
+		PessoaService pessoaService = new PessoaService();
+		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		
+		
+		listaPessoa = pessoaService.chamaListaPessoaService();
+		
+		request.setAttribute("sessaoListaPessoa", listaPessoa);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		rd.forward(request, response);
+	}
+
+}
