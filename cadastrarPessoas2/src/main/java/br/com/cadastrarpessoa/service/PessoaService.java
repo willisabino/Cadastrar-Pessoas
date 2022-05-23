@@ -70,26 +70,14 @@ public class PessoaService {
 		
 	}
 
-	public ArrayList<Pessoa> buscaPessoaPeloId(String paramId) {
+	public Pessoa buscaPessoaPeloId(String paramId) {
 		
 		Long id = Long.parseLong(paramId);
 		
-		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
-		PessoaService pessoaService = new PessoaService();
+		Pessoa listaPessoa = new Pessoa();
 		PessoaDao pessoaDao = new PessoaDao();
-		//listaPessoa = pessoaService.chamaListaPessoaService();
 		listaPessoa = pessoaDao.buscaPeloId(id);
-		System.out.println(listaPessoa);
-		System.out.println("PessoaService");
 
-//		for (int x = 0; x < listaPessoa.size(); x++) {
-//
-//			if (listaPessoa.get(x).getId() == id) {
-//				
-//				return listaPessoa.get(x);
-//			}
-//			
-//		}
 		return listaPessoa;
 	}
 }

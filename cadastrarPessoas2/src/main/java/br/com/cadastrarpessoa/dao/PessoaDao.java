@@ -193,11 +193,11 @@ public class PessoaDao {
 	}
 
 	
-	public ArrayList<Pessoa> buscaPeloId(long id){
+	public Pessoa buscaPeloId(long id){
 		
 		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.tb_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
-		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
+		Pessoa pessoa = null;
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -213,19 +213,17 @@ public class PessoaDao {
 			
 			rset = pstm.executeQuery(); 
 			
-			//pstm.execute();
 			System.out.println("Fora do laço");
 			while(rset.next()) {
 				
-				Pessoa pessoa = new Pessoa();
+				pessoa = new Pessoa();
 				
 				pessoa.setId(rset.getLong("id"));
 				pessoa.setNome(rset.getString("nome"));
 				pessoa.setIdade(rset.getInt("idade"));
 				pessoa.setSexo(rset.getString("tb_sexo.sexo"));
 				pessoa.setDataCadastro(rset.getDate("dataCadastro"));
-				pessoas.add(pessoa);
-				System.out.println(pessoas);
+				System.out.println(pessoa);
 				System.out.println("Dentro do laço");
 			}
 			
@@ -252,6 +250,6 @@ public class PessoaDao {
 			}
 		}
 		
-		return pessoas;
+		return pessoa;
 	}
 }
