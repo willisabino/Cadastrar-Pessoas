@@ -13,7 +13,7 @@ public class PessoaDao {
 
 	public void inserirCadastro(Pessoa pessoa) {
 		
-		String sql = "INSERT INTO tb_ficha(nome, idade, sexo, dataCadastro, tb_sexo) VALUES (?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO tb_ficha(nome, idade, dataCadastro, cod_sexo) VALUES (?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -25,9 +25,8 @@ public class PessoaDao {
 			
 			pstm.setString(1, pessoa.getNome());
 			pstm.setInt(2, pessoa.getIdade());
-			pstm.setString(3, pessoa.getSexo());
-			pstm.setDate(4, new Date(pessoa.getDataCadastro().getTime()));
-			pstm.setString(5, pessoa.getSexo());
+			pstm.setDate(3, new Date(pessoa.getDataCadastro().getTime()));
+			pstm.setString(4, pessoa.getSexo());
 			
 			pstm.execute();
 			
@@ -53,7 +52,15 @@ public class PessoaDao {
 
 	public ArrayList<Pessoa> chamaListaPessoas(){
 		
-		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.tb_sexo = tb_sexo.id ORDER BY tb_ficha.id";
+		StringBuilder sb = new StringBuilder();
+		sb.append(" select *");
+		sb.append(" from tbfdf");
+		sb.append(" tb ");
+		sb.append(" where xs");
+		
+		sb.toString();
+		
+		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id ORDER BY tb_ficha.id";
 		
 		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
@@ -110,7 +117,7 @@ public class PessoaDao {
 
 	public void editarCadastro(Pessoa pessoa) {
 		
-		String sql = "UPDATE tb_ficha SET nome = ?, idade = ?, sexo = ?, dataCadastro = ? "+
+		String sql = "UPDATE tb_ficha SET nome = ?, idade = ?, dataCadastro = ?, cod_sexo = ? "+
 		"WHERE id = ?";
 		
 		Connection conn = null;
@@ -123,8 +130,9 @@ public class PessoaDao {
 			
 			pstm.setString(1, pessoa.getNome());
 			pstm.setInt(2, pessoa.getIdade());
-			pstm.setString(3, pessoa.getSexo());
-			pstm.setDate(4, new Date(pessoa.getDataCadastro().getTime()));
+			//pstm.setString(3, pessoa.getSexo());
+			pstm.setDate(3, new Date(pessoa.getDataCadastro().getTime()));
+			pstm.setString(4, pessoa.getSexo());
 			
 			pstm.setLong(5, pessoa.getId());
 			
@@ -195,7 +203,7 @@ public class PessoaDao {
 	
 	public Pessoa buscaPeloId(long id){
 		
-		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.tb_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
+		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
 		Pessoa pessoa = null;
 		
@@ -213,7 +221,6 @@ public class PessoaDao {
 			
 			rset = pstm.executeQuery(); 
 			
-			System.out.println("Fora do laço");
 			while(rset.next()) {
 				
 				pessoa = new Pessoa();
@@ -223,8 +230,6 @@ public class PessoaDao {
 				pessoa.setIdade(rset.getInt("idade"));
 				pessoa.setSexo(rset.getString("tb_sexo.sexo"));
 				pessoa.setDataCadastro(rset.getDate("dataCadastro"));
-				System.out.println(pessoa);
-				System.out.println("Dentro do laço");
 			}
 			
 		}catch (Exception e) {

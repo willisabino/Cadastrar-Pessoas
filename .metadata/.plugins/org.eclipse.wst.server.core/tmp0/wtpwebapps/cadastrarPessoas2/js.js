@@ -16,3 +16,10 @@ function alteraTipoInput(){
 	document.getElementById ("id").type = "number"; 
 	document.getElementById ("idade").type = "numer"; 
 }
+
+function funcaoGravar(){
+	alert("Oi");
+	const id = document.querySelector('#id').value;
+	//O valor da ação deve ser gravar
+	submit();
+}

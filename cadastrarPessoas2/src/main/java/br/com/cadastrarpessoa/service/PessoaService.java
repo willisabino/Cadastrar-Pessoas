@@ -8,29 +8,15 @@ import br.com.cadastrarpessoa.model.Pessoa;
 
 public class PessoaService {
 	
+	private PessoaDao pessoaDao = new PessoaDao();
+	
 	public ArrayList<Pessoa> chamaListaPessoaService() {
 		
-		PessoaDao pessoaDao = new PessoaDao();
-		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		return pessoaDao.chamaListaPessoas();
 		
-		
-		for(Pessoa p : pessoaDao.chamaListaPessoas()) {
-			
-			long id = p.getId();
-			String nome = p.getNome();
-			int idade = p.getIdade();
-			String sexo = p.getSexo();
-			Date data = new Date();
-			
-			listaPessoa.add(new Pessoa(id, nome, idade, sexo, data));
-		}	
-		
-		return listaPessoa;
 	}
 
 	public void inserirPessoas(String nome, String idade, String sexo) {
-		
-		PessoaDao pessoaDao = new PessoaDao();
 		
 		Pessoa pessoa = new Pessoa();
 		pessoa.setNome(nome);
@@ -44,7 +30,6 @@ public class PessoaService {
 	public void alterarCadastro(String id, String nome, String idade, String sexo) {
 		
 		Pessoa pessoa = new Pessoa();
-		PessoaDao pesssoaDao = new PessoaDao();
 		
 		
 		pessoa.setNome(nome);
@@ -53,13 +38,11 @@ public class PessoaService {
 		pessoa.setDataCadastro(new Date());
 		pessoa.setId(Long.parseLong(id));
 		
-		pesssoaDao.editarCadastro(pessoa);
+		pessoaDao.editarCadastro(pessoa);
 		
 	}
 
 	public void removeCadastro(String id) {
-		
-		PessoaDao pessoaDao = new PessoaDao();
 		
 		pessoaDao.deletarCadastro(Long.parseLong(id));
 		
@@ -67,12 +50,7 @@ public class PessoaService {
 
 	public Pessoa buscaPessoaPeloId(String paramId) {
 		
-		Long id = Long.parseLong(paramId);
+		return pessoaDao.buscaPeloId(Long.parseLong(paramId));
 		
-		Pessoa listaPessoa = new Pessoa();
-		PessoaDao pessoaDao = new PessoaDao();
-		listaPessoa = pessoaDao.buscaPeloId(id);
-
-		return listaPessoa;
 	}
 }

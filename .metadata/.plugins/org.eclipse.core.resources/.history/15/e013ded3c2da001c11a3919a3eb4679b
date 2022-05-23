@@ -1,0 +1,76 @@
+package br.com.cadastrarpessoa.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import br.com.cadastrarpessoa.dao.PessoaDao;
+import br.com.cadastrarpessoa.model.Pessoa;
+
+public class PessoaService {
+	
+	private PessoaDao pessoaDao = new PessoaDao();
+	
+	public ArrayList<Pessoa> chamaListaPessoaService() {
+		
+//		PessoaDao pessoaDao = new PessoaDao();
+//		ArrayList<Pessoa> listaPessoa = new ArrayList<>();
+		
+		
+		
+//		for(Pessoa p : pessoaDao.chamaListaPessoas()) {
+//			
+//			long id = p.getId();
+//			String nome = p.getNome();
+//			int idade = p.getIdade();
+//			String sexo = p.getSexo();
+//			Date data = new Date();
+//			
+//			listaPessoa.add(new Pessoa(id, nome, idade, sexo, data));
+//		}	
+		
+		//return listaPessoa;
+		
+		return pessoaDao.chamaListaPessoas();
+	}
+
+	public void inserirPessoas(String nome, String idade, String sexo) {
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setNome(nome);
+		pessoa.setIdade(Integer.parseInt(idade));
+		pessoa.setSexo(sexo);
+		pessoa.setDataCadastro(new Date());
+		
+		pessoaDao.inserirCadastro(pessoa);
+	}
+
+	public void alterarCadastro(String id, String nome, String idade, String sexo) {
+		
+		Pessoa pessoa = new Pessoa();
+		PessoaDao pesssoaDao = new PessoaDao();
+		
+		
+		pessoa.setNome(nome);
+		pessoa.setIdade(Integer.parseInt(idade));
+		pessoa.setSexo(sexo);
+		pessoa.setDataCadastro(new Date());
+		pessoa.setId(Long.parseLong(id));
+		
+		pesssoaDao.editarCadastro(pessoa);
+		
+	}
+
+	public void removeCadastro(String id) {
+		
+		PessoaDao pessoaDao = new PessoaDao();
+		
+		pessoaDao.deletarCadastro(Long.parseLong(id));
+		
+	}
+
+	public Pessoa buscaPessoaPeloId(String paramId) {
+		
+		return pessoaDao.buscaPeloId(Long.parseLong(paramId));
+		
+	}
+}

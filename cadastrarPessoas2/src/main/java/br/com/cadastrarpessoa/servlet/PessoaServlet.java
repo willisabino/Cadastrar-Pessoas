@@ -1,7 +1,6 @@
 package br.com.cadastrarpessoa.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.cadastrarpessoa.dao.PessoaDao;
 import br.com.cadastrarpessoa.model.Pessoa;
 import br.com.cadastrarpessoa.service.PessoaService;
 

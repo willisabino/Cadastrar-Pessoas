@@ -41,9 +41,11 @@
 			</select>
 		</p>
 		<p>
-			<input type="submit" value="Inserir" name="acao" id="inserir" hidden=false> 
-			<input type="submit" value="Alterar" name="acao" id="alterar" hidden> 
-			<input type="submit" value="Limpar" name="acao" id="limpar">
+			<input type="submit" value="Inserir" id="inserir" name="acao"> 
+			<input type="submit" value="Alterar" id="alterar" name="acao"> 
+			<input type="submit" value="Limpar" id="limpar" name="acao">
+			<input type="hidden" name="acao">
+			<input type="button" value="gravarJavaScript" onclick="funcaoGravar()">
 		</p>
 	</form>
 
