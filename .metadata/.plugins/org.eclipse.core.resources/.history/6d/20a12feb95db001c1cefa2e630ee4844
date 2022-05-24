@@ -13,12 +13,7 @@ public class PessoaDao {
 
 	public void inserirCadastro(Pessoa pessoa) {
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("INSERT INTO tb_ficha");
-		sb.append("(nome, idade, dataCadastro, cod_sexo)");
-		sb.append(" VALUES (?, ?, ?, ?)");
-		
-		String sql = sb.toString();
+		String sql = "INSERT INTO tb_ficha(nome, idade, dataCadastro, cod_sexo) VALUES (?, ?, ?, ?)";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -58,12 +53,14 @@ public class PessoaDao {
 	public ArrayList<Pessoa> chamaListaPessoas(){
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT * FROM tb_ficha ");
-		sb.append("INNER JOIN tb_sexo ");
-		sb.append("ON tb_ficha.cod_sexo = tb_sexo.id ");
-		sb.append("ORDER BY tb_ficha.id");
+		sb.append(" select *");
+		sb.append(" from tbfdf");
+		sb.append(" tb ");
+		sb.append(" where xs");
 		
-		String sql = sb.toString();
+		sb.toString();
+		
+		String sql = "SELECT * FROM tb_ficha INNER JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id ORDER BY tb_ficha.id";
 		
 		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
@@ -120,13 +117,8 @@ public class PessoaDao {
 
 	public void editarCadastro(Pessoa pessoa) {
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("UPDATE tb_ficha ");
-		sb.append("SET nome = ?, idade = ?, ");
-		sb.append("dataCadastro = ?, cod_sexo = ? ");
-		sb.append("WHERE id = ?");
-		
-		String sql = sb.toString();
+		String sql = "UPDATE tb_ficha SET nome = ?, idade = ?, dataCadastro = ?, cod_sexo = ? "+
+		"WHERE id = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -211,13 +203,7 @@ public class PessoaDao {
 	
 	public Pessoa buscaPeloId(long id){
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT * FROM tb_ficha ");
-		sb.append("INNER JOIN tb_sexo ");
-		sb.append("ON tb_ficha.cod_sexo = tb_sexo.id ");
-		sb.append("WHERE tb_ficha.id = ?");
-		
-		String sql = sb.toString();
+		String sql = "SELECT * FROM tb_ficha INNER JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
 		Pessoa pessoa = null;
 		

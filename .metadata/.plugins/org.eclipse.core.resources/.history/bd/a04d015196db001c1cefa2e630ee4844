@@ -120,13 +120,8 @@ public class PessoaDao {
 
 	public void editarCadastro(Pessoa pessoa) {
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("UPDATE tb_ficha ");
-		sb.append("SET nome = ?, idade = ?, ");
-		sb.append("dataCadastro = ?, cod_sexo = ? ");
-		sb.append("WHERE id = ?");
-		
-		String sql = sb.toString();
+		String sql = "UPDATE tb_ficha SET nome = ?, idade = ?, dataCadastro = ?, cod_sexo = ? "+
+		"WHERE id = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -211,13 +206,7 @@ public class PessoaDao {
 	
 	public Pessoa buscaPeloId(long id){
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT * FROM tb_ficha ");
-		sb.append("INNER JOIN tb_sexo ");
-		sb.append("ON tb_ficha.cod_sexo = tb_sexo.id ");
-		sb.append("WHERE tb_ficha.id = ?");
-		
-		String sql = sb.toString();
+		String sql = "SELECT * FROM tb_ficha INNER JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
 		Pessoa pessoa = null;
 		
