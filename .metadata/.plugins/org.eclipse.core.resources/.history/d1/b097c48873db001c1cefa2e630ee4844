@@ -60,7 +60,7 @@ public class PessoaDao {
 		
 		sb.toString();
 		
-		String sql = "SELECT * FROM tb_ficha INNER JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id ORDER BY tb_ficha.id";
+		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id ORDER BY tb_ficha.id";
 		
 		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
@@ -203,7 +203,7 @@ public class PessoaDao {
 	
 	public Pessoa buscaPeloId(long id){
 		
-		String sql = "SELECT * FROM tb_ficha INNER JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
+		String sql = "SELECT * FROM tb_ficha JOIN tb_sexo ON tb_ficha.cod_sexo = tb_sexo.id WHERE tb_ficha.id = ?";
 		
 		Pessoa pessoa = null;
 		
